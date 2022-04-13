@@ -1,0 +1,19 @@
+{
+  "name": "alura-challenge-back-end-3",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/lucassnts963/alura-challenge-back-end-3.git",
+  "author": "Lucas Santos <lucassnts963@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "sequelize": "^6.19.0",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
