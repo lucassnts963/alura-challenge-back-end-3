@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <title>Alura Challenge Back End</title>
 </head>
 <body>
@@ -12,9 +17,26 @@
   </header>
   <main>
     <h1>Análise de Transações</h1>
+    <p>Este é o projeto referente ao <strong>Challenge de Back-End 3ª Edição</strong> da <a href="https://www.alura.com.br/challenges/back-end-3">Alura</a>. Com o <strong>objetivo</strong> de desenvolver uma aplicação web para analisar transações financeiras.</p>
+    <h2>IMPORTAR AS TRANSAÇÕES</h2>
+    <form id="form-upload" enctype="multipart/form-data" action="/uploads" method="post">
+      <div class="container-input">
+        <label class="label-input-file" for="input-file">
+          <span>
+            Encontrar
+          </span>
+        </label>
+        <input type="file" name="file" id="input-file" accept=".csv">
+      </div>
+      <div class="submit">
+        <small>Selecione o arquivo para realizar o upload</small>
+        <input type="submit" value="Importar">
+      </div>
+    </form>
   </main>
   <footer>
 
   </footer>
+  <script src="./js/index.js"></script>
 </body>
 </html>

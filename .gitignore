@@ -104,4 +104,6 @@ dist
 .tern-port
 
 #config sequelize
-config.*
+/src/config
+
+/uploads
