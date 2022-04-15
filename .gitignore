@@ -103,7 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
-#config sequelize
-/src/config
+#minhas config
+src/config
 
 /uploads
