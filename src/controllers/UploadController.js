@@ -1,16 +1,11 @@
-
-function toMegabytes(bytes){
-  const megaToBytes = Math.pow(10, 6)
-  const mega = bytes / megaToBytes
-  return mega
-}
-
+const Utils = require('../utils/Utils')
 
 class UploadController {
   static uploadFile(req, res){
-    const {originalname, path, size} = req.file
-    const textToSend = `O arquivo ${originalname} de ${toMegabytes(size)}MB foi recebido e salvo em ${path}.`
-    console.log(textToSend)
+    const { file } = req
+    const {originalname, filename, path, size} = file
+    const textToSend = `O arquivo ${originalname} de ${Utils.bytesToMegabytes(size)}MB foi recebido e salvo em ${path}.`
+    Utils.csvToJson(path, separator = ',')
     return res.status(200).json({message: textToSend})
   }
 }
