@@ -1,0 +1,16 @@
+<table class="table-imports">
+  <thead>
+    <tr>
+      <th>DATA TRANSAÇÕES</th>
+      <th>DATA IMPORTAÇÃO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let item of data){ %>
+      <tr>
+        <%- include('import/td', {date: item.dateTransactions}); %>
+        <%- include('import/td', {date: item.createdAt}); %>
+      </tr>
+    <% } %>
+  </tbody>
+</table>

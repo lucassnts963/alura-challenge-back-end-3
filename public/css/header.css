@@ -1,0 +1,38 @@
+header{
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  border-bottom: 1px solid #002F1A;
+}
+
+header h2 {
+  margin-left: 5%;
+}
+
+nav{
+  margin-right: 30%;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 15px;
+  width: 100%;
+}
+
+nav ul li:hover{
+  border-bottom: 5px solid #00B102;
+}
+
+.active{
+  border-bottom: 5px solid #00B102;
+  color: #fff;
+}

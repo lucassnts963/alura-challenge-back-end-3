@@ -32,19 +32,11 @@ function checkDate(firstDate, date){
   return firstDate.toDateString() === date.toDateString()
 }
 
-//dd-mm-yyyy
-function formatDate(date){
-  const day = date.getDate()
-  const month = date.getMonth() + 1
-  const year = date.getFullYear()
-
-  return `${day < 10 ? 0 : ''}${day}/${month < 10 ? 0 : ''}${month}/${year}`
-}
 
 //Verifica se já existe transações com essa data se sim alertar o usuário
 async function checkDateTransactions(firstDate){
   const { QueryTypes } = require('sequelize')
-  const dateFormated = formatDate(firstDate)
+  const dateFormated = Utils.formatDate(firstDate)
   const sql = `SELECT dateTransactions FROM Imports WHERE DATE_FORMAT(dateTransactions, '%d/%m/%Y') = '${dateFormated}';`
   const dateSelected = await models.sequelize.query(sql, {type: QueryTypes.SELECT})
   console.log('dateSelected: ', dateSelected)

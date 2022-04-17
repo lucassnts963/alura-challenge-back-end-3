@@ -124,3 +124,17 @@ input[type=submit]:hover{
   cursor: pointer;
   transition: 0.5s;
 }
+
+table{
+  width: 60%;
+  margin-top: 25px;
+}
+
+th, td{
+  border-bottom: 1px solid #CED4DA;
+  text-align: left;
+}
+
+th {
+  border-bottom: 2px solid #00B102;
+}

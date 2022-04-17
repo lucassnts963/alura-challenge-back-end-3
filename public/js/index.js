@@ -35,3 +35,18 @@ function importar(){
 
   console.log(buildSize(file.size))
 }
+
+function selectedPage(){
+  path = window.location.pathname
+  const menuHome = document.getElementById('menu-home')
+  const menuAbout = document.getElementById('menu-about')
+  if(path === '/'){
+    menuHome.setAttribute('class', 'active')
+    menuAbout.setAttribute('class', '')
+  } else {
+    menuAbout.setAttribute('class', 'active')
+    menuHome.setAttribute('class', '')
+  }
+}
+
+window.onload = selectedPage

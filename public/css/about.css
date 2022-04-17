@@ -1,0 +1,30 @@
+.content-about {
+  display: flex;
+  justify-content: center;
+}
+
+.content-about p{
+  text-align: justify;
+}
+
+.list-techs {
+  list-style: none;
+  display: flex;
+}
+
+.list-techs li{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.list-techs li span {
+  color: #00B102;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.list-techs li small {
+  display: none;
+}
