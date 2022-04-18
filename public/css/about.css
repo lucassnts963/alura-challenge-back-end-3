@@ -28,3 +28,24 @@
 .list-techs li small {
   display: none;
 }
+
+.logo{
+  width: 48;
+  height: 48;
+}
+
+@media only screen and (max-width: 600px) {
+  .list-techs{
+    flex-direction: column;
+  }
+
+  .list-techs li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+
+  .list-techs li small {
+    display: inline;
+  }
+}

@@ -4,6 +4,7 @@ const readline = require('readline')
 const Utils = require('../utils/Utils')
 const models = require('../models')
 
+
 function arrayToObject(array){
   if(array){
     return {
@@ -70,7 +71,7 @@ class UploadController {
           firstDate = transaction.dataHora
           const check = await checkDateTransactions(firstDate)
           if (check){
-            return res.status(400).json({ message: `As transações do dia ${formatDate(firstDate)} já foram importadas!!!` })
+            return res.status(400).render('alert', { message: `As transações do dia ${Utils.formatDate(firstDate)} já foram importadas!!!`, title: 'Aviso' })
           }else{
             await models.Imports.create({dateTransactions: firstDate})
           }
@@ -79,7 +80,7 @@ class UploadController {
           try {
             await models.Transactions.create(transaction)
           } catch (error) {
-            throw error.message
+            return res.status(500).render('error', {title: 'Error', message: error})
           }
         }
       }
@@ -87,9 +88,9 @@ class UploadController {
     }
     
     //TODO: Criar lógica para apagar arquivo do upload
-    if(count === 0) return res.status(400).json({message: `O arquivo ${originalname} está vazio!!!`})
+    if(count === 0) return res.status(400).render('alert', {message: `O arquivo ${originalname} está vazio!!!`, title: 'Aviso'})
 
-    return res.status(200).json(textToSend)
+    return res.status(200).render('alert', { message: textToSend, title: 'Aviso' })
   }
 }
 

@@ -36,3 +36,9 @@ nav ul li:hover{
   border-bottom: 5px solid #00B102;
   color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+  h2.title-header {
+    display: none;
+  }
+}
