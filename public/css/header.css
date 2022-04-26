@@ -25,7 +25,7 @@ nav ul{
 
 nav ul li {
   margin-left: 15px;
-  width: 100%;
+  width: fit-content;
 }
 
 nav ul li:hover{

@@ -2,7 +2,7 @@ let fileToUpload = new File([], 'default.txt')
 
 //Retorna o tamanho com uma string
 function buildSize(bytes){
-
+  
   const gigaToBytes = Math.pow(10, 9)
   const megaToBytes = Math.pow(10, 6)
   const kiloToBytes = Math.pow(10, 3)
