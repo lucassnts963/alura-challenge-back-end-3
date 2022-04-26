@@ -19,5 +19,5 @@ Minha principal dificuldade é a parte do css, pois essa parte de estilização 
 ## Aprendizados
 O principal aprendizado até aqui na primeira semana do projeto foi a utilização do EJS, tenho muito a aprender ainda sobre a tecnologia porém achei muito mais eficiente a contrução das views por meio do EJS. Pois o mesmo tras a possibilidade de reaproveitar códigos. A utilização da biblioteca multer para configurar o upload também foi um grande aprendizado, desmitificando a dificuldade que eu achava que seria fazer um upload de arquivo.
 
-## Nodificações minhas
+## Modificações minhas
 Incrementei o visual da aplicação, para poder praticar um pouco sobre os conhecimentos adquiridos com EJS.
