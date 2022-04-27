@@ -21,8 +21,16 @@ class UserService {
   }
 
   static async findAll(callback = (erro) => {}){
+    const emailUserDefault = 'admin@email.com.br'
+    const Op = models.Sequelize.Op
     try {
-      const allUsers = await models.Users.findAll()
+      const allUsers = await models.Users.findAll({
+        where: {
+          email: {
+            [Op.not]: emailUserDefault
+          }
+        }
+      })
       callback(false)
       return allUsers
     } catch (error) {
