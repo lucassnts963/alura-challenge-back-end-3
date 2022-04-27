@@ -24,10 +24,6 @@ routes.get('/about', (req, res) => {
   return res.render('about', { title: 'Sobre' })
 })
 
-routes.get('/user', (req, res) => {
-  return res.render('cadastro', { title: 'Novo Usuário' })
-})
-
 routes.post('/uploads', upload.single('file'), UploadController.uploadFile)
 
 module.exports = routes

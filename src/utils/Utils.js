@@ -5,6 +5,10 @@ function getRandomInt(min = 0, max = 9){
   return Math.floor(Math.random() * (max - min)) + min
 }
 
+function hasZero(num){
+  return num < 10 ? 0 : ''
+}
+
 class Utils{
   
   static bytesToMegabytes(bytes){
@@ -18,9 +22,17 @@ class Utils{
     const day = date.getDate()
     const month = date.getMonth() + 1
     const year = date.getFullYear()
-    //TODO: Implementar hora caso seja necessário mostrar
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const seconds = date.getSeconds()
 
-    return `${day < 10 ? 0 : ''}${day}/${month < 10 ? 0 : ''}${month}/${year}`
+    if(showHours){
+      return `
+        ${hasZero(day)}${day}/${hasZero(month)}${month}/${year} - 
+        ${hasZero(hours)}${hours}:${hasZero(minutes)}${minutes}:${hasZero(seconds)}${seconds}`
+    }
+
+    return `${hasZero(day)}${day}/${hasZero(month)}${month}/${year}`
   }
 
   static generatePassword(numDigits = 6){
@@ -29,6 +41,14 @@ class Utils{
       password += getRandomInt()
     }
     return password
+  }
+
+  static changeFormats(transaction){
+    return {
+      ...transaction,
+      valor: parseFloat(transaction.valor),
+      dataHora: new Date(transaction.dataHora+'Z'),
+    }
   }
 
 }
