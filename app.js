@@ -2,6 +2,9 @@ const express = require('express')
 const routes = require('./src/routes')
 const expressLayouts = require('express-ejs-layouts')
 
+//My middleware
+const session = require('./src/middlewares/session')
+
 app = express()
 
 // static files
@@ -14,6 +17,9 @@ app.use('/img', express.static(__dirname + 'public/img'))
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
+
+// Habilitando o uso de session
+app.use(session)
 
 // My routes
 app.use(routes)

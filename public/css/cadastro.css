@@ -47,6 +47,34 @@ input:not(:placeholder-shown) + label{
   transition: 0.5s;
 }
 
+input[type=password]{
+  width: 100%;
+  height: 45px;
+  font-size: 20px;
+  color: #00502c;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #00502c;
+}
+
+input[type=password]:focus{
+  outline: 0;
+  border-bottom: 1px solid #00b102;
+  transition: 0.5s;
+}
+
+input[type=password]:not(:placeholder-shown){
+  border-bottom: 1px solid #00b102;
+  transition: 0.5s;
+}
+
+input[type=password]:focus + label,
+input:not(:placeholder-shown) + label{
+  color: #00b102;
+  margin-bottom: 45px;
+  transition: 0.5s;
+}
+
 input[type=email]{
   width: 100%;
   height: 45px;

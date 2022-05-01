@@ -36,8 +36,16 @@ nav ul li:hover{
   display: flex;
 }
 
-.signUp{
+.li-logout:hover{
+  border-bottom: 5px solid crimson;
+}
+
+.logout{
   justify-self: flex-end;
+}
+
+.logout li a {
+  color: crimson;
 }
 
 .active{

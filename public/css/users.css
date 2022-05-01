@@ -1,0 +1,32 @@
+.table-users tbody tr td {
+  background-color: #000;
+  text-align: center;
+}
+
+.table-users tbody tr td input{
+  border: none;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.editar {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background: aqua;
+  margin: 3px;
+  cursor: pointer;
+  color: #000;
+  font-weight: 700;
+}
+
+.deletar {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background: crimson;
+  margin: 3px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+}

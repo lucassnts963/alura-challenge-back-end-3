@@ -56,7 +56,7 @@ class UserService {
       callback(false)
       return user
     } catch (error) {
-      callback(user)
+      callback(error)
       return null
     }
   }

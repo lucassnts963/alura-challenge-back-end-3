@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../css/users.css">
+<main>
+  <h1>Usuários</h1>
+  <table class="table-users">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let user of users) {%>
+        <tr>
+          <td><%- user.id %></td>
+          <td>
+            <input type="text" name="name" id="input-name" value="<%- user.name%>">
+          </td>
+          <td>
+            <input type="text" name="name" id="input-email" value="<%- user.email%>">
+          </td>
+          <td>
+            <button class="editar" onclick="editar('<%-user.id%>')" >Editar</button>
+            <button class="deletar" onclick="deletar('<%-user.id%>')" >Deletar</button>
+          </td>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../js/users.js"></script>
+</main>

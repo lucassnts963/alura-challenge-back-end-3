@@ -23,6 +23,47 @@ class UserController {
     })
     
   }
+
+  static async findAll(req, res){
+    const users = await UserService.findAll((error) => {
+      if(error){
+        return res.status(500).render('error', { title: 'Error', message: error.message })
+      }
+    })
+    return res.status(200).render('users', { title: 'Usuários', users: users })
+  }
+
+  static async delete(req, res){
+    const { id } = req.params
+    const { email } = req.session
+    const user = await UserService.findOneByEmail(email, error => {
+      if(error){
+        return res.sendStatus(500)
+      }
+    })
+    if(!(user.id == Number(id))){
+      const isDeleted = await UserService.delete(id)
+      if(isDeleted){
+        return res.sendStatus(200)
+      }
+    } else {
+      return res.sendStatus(401)
+    }
+  }
+
+  static async update(req, res){
+    const { id } = req.params
+    const newInfos = req.body
+    console.log(newInfos)
+    const userUpdated = await UserService.update(Number(id), newInfos, error => {
+      if(error){
+        return res.sendStatus(500)
+      } else{
+        return res.sendStatus(200)
+      }
+    })
+    console.log(userUpdated)
+  }
 }
 
 module.exports = UserController
